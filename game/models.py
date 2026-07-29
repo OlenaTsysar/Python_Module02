@@ -12,11 +12,11 @@ class Player:
         return random.randint(1,6)
 
 
-class Computer:
+class Computer(Player):
     def __init__(self):
         self.name = "Computer"
 
-    def cube(self):
-        return random.randint(1,6)
+    # def cube(self):
+    #     return random.randint(1,6)
 
 

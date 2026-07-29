@@ -4,7 +4,7 @@ from datetime import datetime
 from .models import Player, Computer
 from .settings import GAME_LEVELS, GAME_LEVELS_CONVERT
 from .score import save_result
-# from .exceptions import InvalidInputError, InvalidRollError
+from .exceptions import InvalidRollError
 
 def choose_level():
 
@@ -30,7 +30,8 @@ def choose():
         value = input("Кинуть кубик (нажмите Enter): ")
 
         if value != "":
-            print("Бросок не сделан!!! Нажмите 'Enter' для повторного броска.")
+            InvalidRollError()    
+            # print("Бросок не сделан!!! Нажмите 'Enter' для повторного броска.")
             continue
 
         break
@@ -73,12 +74,6 @@ def start_game():
     print(f"Финальный счет: {player.score}")  
 
     save_result(name, rounds, player.score)
-
-
-
-
-
-
 
 
 

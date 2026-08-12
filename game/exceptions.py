@@ -1,3 +1,3 @@
-class InvalidRollError:
-    def error(self):
-        print("Бросок не сделан!!! Нажмите 'Enter' для повторного броска.")
+class InvalidRollError(Exception):
+    def __str__(self):
+        return "Бросок не сделан!!! Нажмите 'Enter' для повторного броска."

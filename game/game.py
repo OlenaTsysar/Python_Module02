@@ -26,17 +26,16 @@ def choose_level():
 def choose():
     while True:
 
-        # try:
-        value = input("Кинуть кубик (нажмите Enter): ")
+        try:
+            value = input("Кинуть кубик (нажмите Enter): ")
 
-        if value != "":
-            InvalidRollError()    
-            # print("Бросок не сделан!!! Нажмите 'Enter' для повторного броска.")
-            continue
+            if value != "":
+                raise InvalidRollError()   
 
-        break
-        # except InvalidRollError as error:
-        #     print(error)
+
+            break
+        except InvalidRollError as error:
+            print(error)
 
 
 def start_game():
